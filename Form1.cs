@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Лабораторная_работа__4
@@ -77,7 +71,7 @@ namespace Лабораторная_работа__4
             // выводим это все на форму
             txtInfo.Text = "Сок\tГазировка\tАлкоголь";
             txtInfo.Text += "\n";
-            txtInfo.Text += String.Format("{0}\t{1}\t{2}", juiceCount, sodaCount, alcoholCount);
+            txtInfo.Text += String.Format("{0}\t{1}\t\t{2}", juiceCount, sodaCount, alcoholCount);
         }
 
         private void btnGet_Click(object sender, EventArgs e)
@@ -97,6 +91,15 @@ namespace Лабораторная_работа__4
             txtOut.Text = drink.GetInfo(); // предложим покупателю его напиток
 
             ShowInfo(); // обновим информацию о количестве товара на форме
+        }
+
+        // пункт меню, в котором описано условие задания
+        private void заданиеToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Реализовать эмулятор торгового автомата для раздачи напитков (общее свойство: объём)" + "\n\n" +
+                             "    •  Сок (используемый фрукт, наличие мякоти)" + '\n' +
+                             "    •  Газировка (вид, количество пузыриков)" + '\n' +
+                             "    •  Алкоголь (крепость, тип)");
         }
     }
 }

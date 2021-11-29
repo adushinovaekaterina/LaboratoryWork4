@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Лабораторная_работа__4
 {
@@ -42,7 +38,7 @@ namespace Лабораторная_работа__4
         public bool WithPulp = false; // наличие мякоти
 
         // переопределим метод класса-родителя Drink
-        public override string GetInfo()
+        public override String GetInfo()
         {
             String str = "Я сок";
             str += base.GetInfo(); // вызов метода GetInfo базового класса, т.е. Drink
@@ -75,7 +71,7 @@ namespace Лабораторная_работа__4
         public int BubblesNumber = 0; // количество пузырьков
 
         // переопределим метод класса-родителя Drink
-        public override string GetInfo()
+        public override String GetInfo()
         {
             String str = "Я газировка";
             str += base.GetInfo(); // вызов метода GetInfo базового класса, т.е. Drink
@@ -110,13 +106,13 @@ namespace Лабораторная_работа__4
         public AlcoholType type = AlcoholType.Виски; // тип 
 
         // переопределим метод класса-родителя Drink
-        public override string GetInfo()
+        public override String GetInfo()
         {
             String str = "Я алкоголь";
             str += base.GetInfo(); // вызов метода GetInfo базового класса, т.е. Drink
                                    // с помощью ключевого слова base, чтобы получить информацию об объёме
 
-            str += String.Format("\nКрепость алкоголя: {0}", this.fortress);
+            str += String.Format("\nКрепость: {0}", this.fortress);
             str += String.Format("\nТип: {0}", this.type);
             return str;
         }

@@ -33,13 +33,16 @@ namespace Лабораторная_работа__4
             this.txtInfo = new System.Windows.Forms.RichTextBox();
             this.txtOut = new System.Windows.Forms.RichTextBox();
             this.btnGet = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.заданиеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRefill
             // 
-            this.btnRefill.Location = new System.Drawing.Point(22, 39);
+            this.btnRefill.Location = new System.Drawing.Point(22, 33);
             this.btnRefill.Name = "btnRefill";
-            this.btnRefill.Size = new System.Drawing.Size(261, 23);
+            this.btnRefill.Size = new System.Drawing.Size(261, 35);
             this.btnRefill.TabIndex = 0;
             this.btnRefill.Text = "Перезаполнить";
             this.btnRefill.UseVisualStyleBackColor = true;
@@ -48,16 +51,16 @@ namespace Лабораторная_работа__4
             // txtInfo
             // 
             this.txtInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInfo.Location = new System.Drawing.Point(22, 74);
+            this.txtInfo.Location = new System.Drawing.Point(33, 79);
             this.txtInfo.Name = "txtInfo";
             this.txtInfo.ReadOnly = true;
-            this.txtInfo.Size = new System.Drawing.Size(261, 53);
+            this.txtInfo.Size = new System.Drawing.Size(236, 34);
             this.txtInfo.TabIndex = 1;
             this.txtInfo.Text = "";
             // 
             // txtOut
             // 
-            this.txtOut.Location = new System.Drawing.Point(22, 138);
+            this.txtOut.Location = new System.Drawing.Point(22, 127);
             this.txtOut.Name = "txtOut";
             this.txtOut.Size = new System.Drawing.Size(173, 96);
             this.txtOut.TabIndex = 2;
@@ -65,13 +68,30 @@ namespace Лабораторная_работа__4
             // 
             // btnGet
             // 
-            this.btnGet.Location = new System.Drawing.Point(201, 138);
+            this.btnGet.Location = new System.Drawing.Point(201, 127);
             this.btnGet.Name = "btnGet";
             this.btnGet.Size = new System.Drawing.Size(82, 96);
             this.btnGet.TabIndex = 3;
             this.btnGet.Text = "Взять";
             this.btnGet.UseVisualStyleBackColor = true;
             this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.заданиеToolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(306, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // заданиеToolStripMenuItem1
+            // 
+            this.заданиеToolStripMenuItem1.Name = "заданиеToolStripMenuItem1";
+            this.заданиеToolStripMenuItem1.Size = new System.Drawing.Size(64, 20);
+            this.заданиеToolStripMenuItem1.Text = "Задание";
+            this.заданиеToolStripMenuItem1.Click += new System.EventHandler(this.заданиеToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -82,9 +102,14 @@ namespace Лабораторная_работа__4
             this.Controls.Add(this.txtOut);
             this.Controls.Add(this.txtInfo);
             this.Controls.Add(this.btnRefill);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Раздача напитков";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -94,6 +119,8 @@ namespace Лабораторная_работа__4
         private System.Windows.Forms.RichTextBox txtInfo;
         private System.Windows.Forms.RichTextBox txtOut;
         private System.Windows.Forms.Button btnGet;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem заданиеToolStripMenuItem1;
     }
 }
 

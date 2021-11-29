@@ -12,7 +12,7 @@ namespace Лабораторная_работа__4
 {
     public partial class Form1 : Form
     {
-        List<Drink> drinksList = new List<Drink>(); // поле под список напитков
+        List<Drink> drinksList = new List<Drink>(); // поле под список напитков, нет объектов типа Drink
         public Form1()
         {
             InitializeComponent();
@@ -28,14 +28,23 @@ namespace Лабораторная_работа__4
             {
                 switch(rnd.Next() % 3) // // генерируем случайное число от 0 до 2 (остаток от деления на 3)
                 {
-                    case 0: // если 0, то сок
-                        this.drinksList.Add(new Juice());
+                    case 0: // если 0, то кладем в drinkList объект класса Сок
+                        this.drinksList.Add(new Juice
+                        {
+                            Volume = rnd.Next() % 101
+                        });
                         break;
-                    case 1: // если 1, то газировка
-                        this.drinksList.Add(new Soda());
+                    case 1: // если 1, то кладем в drinkList объект класса Газировка
+                        this.drinksList.Add(new Soda
+                        {
+                            Volume = rnd.Next() % 101
+                        });
                         break;
-                    case 2: // если 2, то алкоголь
-                        this.drinksList.Add(new Alcohol());
+                    case 2: // если 2, то кладем в drinkList объект класса Алкоголь
+                        this.drinksList.Add(new Alcohol
+                        {
+                            Volume = rnd.Next() % 101
+                        });
                         break;
                 }               
             }
@@ -86,26 +95,14 @@ namespace Лабораторная_работа__4
                 return;
             }
 
-            // взяли первый напиток
-            Drink drink = this.drinksList[0];
-            this.drinksList.RemoveAt(0); //  взятие это на самом деле создание указателя на область в памяти
+            Drink drink = this.drinksList[0]; // взяли первый напиток
+
+            this.drinksList.RemoveAt(0); //  взятие это на самом деле создание указателя на область в памяти,
                                          // где хранится экземпляр класса, так что если удаляем, то сами
 
-            // предложим покупателю его напиток
-            if (drink is Juice)
-            {
-                txtOut.Text = "Сок";
-            }
-            else if (drink is Soda)
-            {
-                txtOut.Text = "Газировка";
-            }
-            else if (drink is Alcohol)
-            {
-                txtOut.Text = "Алкоголь";
-            }
-            // обновим информацию о количестве товара на форме
-            ShowInfo();
+            txtOut.Text = drink.GetInfo(); // предложим покупателю его напиток
+
+            ShowInfo(); // обновим информацию о количестве товара на форме
         }
     }
 }

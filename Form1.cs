@@ -29,22 +29,16 @@ namespace Лабораторная_работа__4
                 switch(rnd.Next() % 3) // // генерируем случайное число от 0 до 2 (остаток от деления на 3)
                 {
                     case 0: // если 0, то кладем в drinkList объект класса Сок
-                        this.drinksList.Add(new Juice
-                        {
-                            Volume = rnd.Next() % 101
-                        });
+
+                        // всю работу по созданию экземпляра класса берет на себя метод Generate,
+                        // поэтому нам не нужно больше использовать new
+                        this.drinksList.Add(Juice.Generate());
                         break;
                     case 1: // если 1, то кладем в drinkList объект класса Газировка
-                        this.drinksList.Add(new Soda
-                        {
-                            Volume = rnd.Next() % 101
-                        });
+                        this.drinksList.Add(Soda.Generate());
                         break;
                     case 2: // если 2, то кладем в drinkList объект класса Алкоголь
-                        this.drinksList.Add(new Alcohol
-                        {
-                            Volume = rnd.Next() % 101
-                        });
+                        this.drinksList.Add(Alcohol.Generate());
                         break;
                 }               
             }

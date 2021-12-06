@@ -14,13 +14,14 @@ namespace Лабораторная_работа__4
                         // вывода информации о количестве напитков на форму
         }
 
+        // реакция на нажатие кнопки "Перезаполнить"
         private void btnRefill_Click(object sender, EventArgs e)
         {
-            this.drinksList.Clear();
-            Random rnd = new Random();
+            this.drinksList.Clear(); // очищаем поле под список напитков
+            Random rnd = new Random(); // генератор случайных чисел
             for (int i=0;i<10;++i)
             {
-                switch(rnd.Next() % 3) // // генерируем случайное число от 0 до 2 (остаток от деления на 3)
+                switch(rnd.Next() % 3) // генерируем случайное число от 0 до 2 (остаток от деления на 3)
                 {
                     case 0: // если 0, то кладем в drinkList объект класса Сок
 
@@ -74,6 +75,7 @@ namespace Лабораторная_работа__4
             txtInfo.Text += String.Format("{0}\t{1}\t\t{2}", juiceCount, sodaCount, alcoholCount);
         }
 
+        // реакция на нажатие кнопки "Взять"
         private void btnGet_Click(object sender, EventArgs e)
         {
             // если список пуст, то напишем что пусто и выйдем из функции
